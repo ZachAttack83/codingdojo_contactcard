@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Cards!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("form").submit(function () {
+                $("#cardlist").append(`<div class='card' backside='<p>${$("#description")[0].value}</p>'><h1>${$("#fname")[0].value} ${$("#lname")[0].value}</h1><h5>Click for description!</h5></div>`);
+                return false;
+            })
+
+            $("#cardlist").on("click", ".card", function () {
+                var temp = $(this).html();
+                $(this).html($(this).attr("backside"));
+                $(this).attr("backside", temp);
+            });
+        })
+    </script>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="form">
+            <form>
+                <p>First name:<input type="text" id="fname"></p>
+                <p>Last name:<input type="text" id="lname"></p>
+                <p>Description:</p>
+                <textarea placeholder="Enter Description" id="description"></textarea><br>
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+        <div id="cardlist">
+        </div>
+    </div>
+</body>
+</html>

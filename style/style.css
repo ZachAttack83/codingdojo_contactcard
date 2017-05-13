@@ -1,0 +1,32 @@
+* {
+    // outline: red dotted thin;
+}
+
+textarea {
+    height: 100px;
+    width: 300px;
+}
+
+#wrapper {
+    width: 800px;
+}
+
+#form {
+    width: 400px;
+    float: left;
+}
+
+#cardlist {
+    width: 400px;
+    float: right;
+    // outline: red dotted thin;
+}
+
+.card {
+    box-shadow: 5px 10px 5px #888888;
+    border: thin black solid;
+    width: 280px;
+    height: 180px;
+    padding: 10px;
+    margin: 0px auto 20px auto;
+}
